@@ -32,16 +32,16 @@ class EntranceAnimation extends React.Component {
         return(
             <StaggeredMotion
             defaultStyles={[
-                { width: 100 },
+                { width: 200 },
                 { width: 0 },
                 { width: 0 },
                 { width: 0 },
             ]}
             styles={(prevStyles) => [
-                { width: spring(0) },
+                { width: spring(10) },
                 { width: spring(prevStyles[0].width) },
-                { width: spring(prevStyles[1].width) },
-                { width: spring(prevStyles[2].width + 10) }, 
+                { width: spring(prevStyles[1].width ) },
+                { width: spring(prevStyles[2].width) }, 
             ]}
             >
             {(styles) => (
