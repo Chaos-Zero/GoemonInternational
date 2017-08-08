@@ -1,8 +1,10 @@
-import THREE from 'three';
+import * as THREE from 'three';
 import React from 'react';
-
-import Model from './Goemon/model.react';
-
+import SettingsStore from 'stores/settings_store';
+import Scene3D from 'components/models/scene.react';
+import World from 'components/models/world.react';
+import Model from 'components/models/model.react';
+import Stats from 'components/models/stats.react';
 
 /* main react component, the only component with state */
 

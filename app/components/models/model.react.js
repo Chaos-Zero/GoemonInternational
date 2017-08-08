@@ -1,7 +1,7 @@
-import THREE from 'three';
+import * as THREE from 'three';
 import React from 'react';
-import ParsedModel from 'components/ModelImporter/parsed_model';
-import CreateMaterial from 'components/ModelImporter/create_material';
+import ParsedModel from 'components/modelImporter/parsed_model';
+import CreateMaterial from 'components/modelImporter/create_material';
 
 class Model3D extends React.Component {
 
@@ -13,6 +13,16 @@ class Model3D extends React.Component {
 
 
   render() {
+     let model = new ParsedModel();
+    model.load("components/models/eggman/eggman.json").then(
+
+    function resolve(m){
+      console.log('loaded:', m);
+    },
+    function reject(e){
+      console.error('error: THIS IS NOT LOADING DAMMIT', e);
+    }
+  );
 
     if(typeof this.props.parsedModel.model === 'undefined'){
       let size = 50;
@@ -36,6 +46,7 @@ class Model3D extends React.Component {
     // render model with merged geometries is not supported because MultiMaterials are not yet supported in react-three-renderer
     // if(this.props.mergeGeometries === true){
     // }
+
 
 
     // render model with separate geometries

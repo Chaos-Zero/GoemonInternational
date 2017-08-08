@@ -1,3 +1,18 @@
+require('babel-polyfill');
+
+import React from 'react';
+//import Model from 'components/Models/Goemon/model.react';
+import ReactDOM from 'react-dom';
+import App from 'components/models/app.react';
+
+window.onload = function(){
+
+  ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+  );
+};
+
 /*
  * HomePage
  *
@@ -27,6 +42,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
 }
 */
 
+/*
 import React from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
@@ -108,3 +124,4 @@ return (<React3
     }
 
     ReactDOM.render(<Simple/>, document.body);
+*/
